@@ -1,4 +1,4 @@
-%% -*- mode: octave;-*-
+%% -*- mode: matlab;-*-
 
 lena = im2double(imread('lena.gif'))
 
