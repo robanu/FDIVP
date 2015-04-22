@@ -1,4 +1,6 @@
-%-*- mode: octave;-*-
+%% -*- mode: octave;-*-
+## -*- mode: octave;-*-
+
 lena = im2double(imread('lena.gif'))
 
 k3 = ones(3,3)*(1/9)
