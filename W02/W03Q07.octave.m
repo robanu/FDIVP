@@ -1,4 +1,4 @@
-%% -*- mode: octave;-*-
+% GNU Octave
 
 lena = im2double(imread('lena.gif'))
 
