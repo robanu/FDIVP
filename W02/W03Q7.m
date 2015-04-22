@@ -1,3 +1,4 @@
+%-*- mode: matlab;-*-
 lena = im2double(imread('lena.gif'))
 
 k3 = [1/9,1/9,1/9;1/9,1/9,1/9;1/9,1/9,1/9;]
