@@ -1,16 +1,16 @@
 #Information
-Mon 4 May 2015 7:00 AM PDT
-Duration:	Untimed
-Attempts:	0/100
+Mon 4 May 2015 7:00 AM PDT  
+Duration:	Untimed  
+Attempts:	100  
 
 
 #Question 1
 Check all the applications where motion estimation can be employed to improve the results:
 
-[ ] Object tracking  
-[ ] Human-computer interaction  
+[X] Object tracking  
+[X] Human-computer interaction  
 [ ] Still image inpainting  
-[ ] Video compression  
+[X] Video compression  
 [ ] Segmentation of a single image  
 
 
@@ -18,31 +18,58 @@ Check all the applications where motion estimation can be employed to improve th
 We want to increase the frame rate of a video sequence by inserting a new frame between every two existing consecutive frames. Denote by y the new frame formed via linear interpolation of motion vectors between frames xt−1 and xt in the original video. Assuming that a circular object is centered at pixel (i,j) in xt−1 and at pixel (p,q) in xt, where will it be centered in y?
 
 [ ] (p+i,q+j)  
-[ ] ((p+i)/2,(q+j)/2)  
+[X] ((p+i)/2,(q+j)/2)  
 [ ] (p−i,q−j)  
 [ ] ((p−i)/2,(q−j)/2)  
 
 
 #Question 3
-Calculate the Mean Square Error (MSE) between the two given image blocks (enter your answer to at least one decimal point): ![](W04Q03IMG00.png)
+Calculate the Mean Square Error (MSE) between the two given image blocks (enter your answer to at least one decimal point):  
+![](W04Q03IMG00.png)  
 
-[ ] 
+[X] 1.5
 
+##Personal notes
+Performing octave calculation:
+
+```matlab
+b1 = [2,2,5,6; 2,2,3,4; 1,1,2,2; 1,1,2,2]
+b2 = [2,2,5,3; 2,2,6,4; 2,2,2,2; 2,2,1,1]
+mse = sum(sum(power(b2-b1,2)))/16
+
+mse =  1.5000
+```
 
 #Question 4
-Assume that we want to perform block matching for the image block x given below. Which of the following image blocks is a better match in the Mean Absolute Error (MAE) sense? ![](W04Q04IMG00.png)
+Assume that we want to perform block matching for the image block x given below. Which of the following image blocks is a better match in the Mean Absolute Error (MAE) sense?  
+![](W04Q04IMG00.png)
 
 [ ] ![](W04Q04IMG01.png)  
-[ ] ![](W04Q04IMG02.png)  
+[X] ![](W04Q04IMG02.png)  
 [ ] ![](W04Q04IMG03.png)  
 [ ] ![](W04Q04IMG04.png)  
 
+##Personal notes
+Performing octave calculations
+
+```matlab
+b1 = [50,60,20,20; 30,40,20,20; 20,40,10,10; 10,20,10,10]
+b21 = [20,20,50,60; 20,20,30,40; 20,40,10,10; 10,20,10,10]
+b22 = [60,70,30,30; 40,50,30,30; 30,50,20,20; 20,30,20,20]
+b23 = [10,10,20,20; 10,10,20,20; 20,40,50,60; 10,20,30,40]
+b24 = [5,6,2,2; 3,4,2,2; 2,4,1,1; 1,2,1,1]
+
+mae1 =  sum(sum(abs(b1-b21)))/(4*4)  % 12.5
+mae2 =  sum(sum(abs(b1-b22)))/(4*4)  % 10
+mae3 =  sum(sum(abs(b1-b23)))/(4*4)  % 17.5
+mae4 =  sum(sum(abs(b1-b24)))/(4*4)  % 21.938
+```
 
 #Question 5
 (True or False) Sub-pixel motion estimation is used in applications where a faster and hence less accurate estimation of motion is needed.
 
 [ ] True  
-[ ] False
+[X] False
 
 
 #Question 6
@@ -51,15 +78,18 @@ Refer to the RGB cube shown in the video lecture for this problem. Color magenta
 [ ] red  
 [ ] green  
 [ ] blue  
-[ ] white  
-[ ] black  
+[X] white  
+[ ] black
+
+##Personal notes
+First instance selected black but was wrong ?!
 
 
 #Question 7
 (True or False) Intensity in HSI color space is exactly the same as the Y-channel in YCbCr color space, as both represent the "brightness" of an image.
 
 [ ] True  
-[ ] False  
+[X] False  
 
 
 #Question 8
@@ -73,3 +103,32 @@ In this problem you will perform block matching motion estimation between two co
 1. the coordinate of the upper-left corner of the matched block in MATLAB convention. This requires two integer numbers;
 2. the corresponding MAE value, which is a floating-point number. Enter the last number to two decimal points. As an example for format of answer, suppose the matched block has upper-left corner located at (1,1), and the corresponding MAE is 10.12, then you should enter 1 1 10.12 (the three numbers are separated by spaces).
 
+[X] 65 81 22.98
+
+##Personal notes
+```matlab
+i1 = double(imread('W04Q08IMG01.jpg'))
+i2 = double(imread('W04Q08IMG02.jpg'))
+
+bt = i2(65:96,81:112)
+size(b)  % 32 x 32
+
+mae0 = 1000
+for i = 1:256
+  for j = 1:320
+    mae1 = sum(sum(abs(bt-i1(i:i+31,j:j+31))))/(32*32)
+    if mae0 > mae1
+      mae0 = mae1
+      ans = [i, j, mae0]
+    end
+  end
+end
+
+ans
+
+%ans =
+%
+%   65 81 22.985
+
+
+```
