@@ -1,39 +1,39 @@
 #Question 1
 Fast Fourier Transform (FFT) speeds up the computation of the Discrete Fourier Transform (DFT) of a signal by compromising the accuracy of the result
 
-[ ] True
+[ ] True 			
 [ ] False
 
 #Question 2
 The continuous image x(t1,t2) has the following frequency spectrum. What is the minimum number of samples that should be taken from any 10cm by 10cm square region on the image to avoid aliasing? ![](W03Q02IMG00.png)
 
-[ ] 5
-[ ] 25
-[ ] 50
-[ ] 100
+[ ] 5  
+[ ] 25  
+[ ] 50  
+[ ] 100  
 
 #Question 3
 Imagine you want to decrease the resolution of a 1024×1024 pixel image by a factor of 2 in each direction so that you end up with a 512×512 lower resolution image. Which one of the following procedures should you follow?
 
-[ ] low-pass filtering of the original image followed by discarding half of the pixels in the resulting image
-[ ] low-pass filtering of the original image followed by discarding three quarters of the pixels in the resulting image
-[ ] high-pass filtering of the original image followed by discarding half of the pixels in the resulting image
-[ ] high-pass filtering of the original image followed by discarding three quarters of the pixels in the resulting image
+[ ] low-pass filtering of the original image followed by discarding half of the pixels in the resulting image  
+[ ] low-pass filtering of the original image followed by discarding three quarters of the pixels in the resulting image  
+[ ] high-pass filtering of the original image followed by discarding half of the pixels in the resulting image  
+[ ] high-pass filtering of the original image followed by discarding three quarters of the pixels in the resulting image  
 
 #Question 4
 Imagine now that you want to display a low resolution image on a high resolution TV screen. Which one of the following statements is true?
 
-[ ] This can only be done in the spatial domain where the image is taken.
-[ ] This can only be done in the frequency domain.
-[ ] This can be done in the spatial domain.
-[ ] Going from low resolution to high resolution is practically not possible.
+[ ] This can only be done in the spatial domain where the image is taken.  
+[ ] This can only be done in the frequency domain.  
+[ ] This can be done in the spatial domain.  
+[ ] Going from low resolution to high resolution is practically not possible.  
 
 #Question 5
 x(n<sub>1</sub>,n<sub>2</sub>) is defined as x(n<sub>1</sub>,n<sub>2</sub>)=(−1)n<sub>1</sub>+n<sub>2</sub> when 0≤n<sub>1</sub>,n<sub>2</sub>≤2 and zero elsewhere. Denote by X(k<sub>1</sub>,k<sub>2</sub>), where 0≤k<sub>1</sub>,k<sub>2</sub>≤2, the DFT of x(n<sub>1</sub>,n<sub>2</sub>). What is the value of X(1,2)?
 
-[ ] 1+j√3
-[ ] 1−j√3
-[ ] 4
+[ ] 1+j√3  
+[ ] 1−j√3  
+[ ] 4  
 [ ] (1+j√3)<sup>2</sup>
 
 
@@ -45,11 +45,11 @@ A 4×4 pixel image x(n<sub>1</sub>,n<sub>2</sub>) is depicted below. Denote by X
 #Question 7
 Check all statements that are true regarding the 4×3 point DFT of the image x(n1,n2) shown below ![](W03Q07IMG00.png)
 
-[ ] X(k<sub>1</sub>,k<sub>2</sub>) is real
-[ ] X(1,k<sub>2</sub>)=X(2,k<sub>2</sub>) for 0≤k<sub>2</sub>≤2
-[ ] X(k<sub>1</sub>,0)=X(k<sub>1</sub>,2) for 0≤k<sub>1</sub>≤3
-[ ] X(k<sub>1</sub>,k<sub>2</sub>)=X(k<sub>2</sub>,k<sub>1</sub>) for 0≤k<sub>1</sub>,k<sub>2</sub>≤2
-[ ] X(0,0)=6
+[ ] X(k<sub>1</sub>,k<sub>2</sub>) is real  
+[ ] X(1,k<sub>2</sub>)=X(2,k<sub>2</sub>) for 0≤k<sub>2</sub>≤2  
+[ ] X(k<sub>1</sub>,0)=X(k<sub>1</sub>,2) for 0≤k<sub>1</sub>≤3  
+[ ] X(k<sub>1</sub>,k<sub>2</sub>)=X(k<sub>2</sub>,k<sub>1</sub>) for 0≤k<sub>1</sub>,k<sub>2</sub>≤2  
+[ ] X(0,0)=6  
 
 
 #Question 8
