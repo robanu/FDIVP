@@ -22,19 +22,19 @@ If you wanted to make an image look brighter than what it currently does, which 
 #Question 3
 The mean and standard deviation of pixel intensity values in an 8-bit gray-scale image are 120 and 10, respectively. What are the mean and standard deviation of pixel intensity values in the negative of this image?
 
-[ ] 135, 10  
+[X] 135, 10  
 [ ] 120, 10  
 [ ] 110, 20  
-[X] They can't be determined without knowing the size of the image.  
+[ ] They can't be determined without knowing the size of the image.  
 
 
 #Question 4
 Check all statements that apply to the following intensity transformation:
 
-[ ] The output image is binary since its pixels take on only two intensity levels.  
+[X] The output image is binary since its pixels take on only two intensity levels.  
 [ ] It is possible to recover the input image after it undergoes this transformation.  
 [X] The mean intensity value of the pixels in the transformed image is always between a and b (including the end points a and b).  
-[X] In the transformed image, the number of pixels with intensity level b is less than the number of pixels with intensity level a.  
+[ ] In the transformed image, the number of pixels with intensity level b is less than the number of pixels with intensity level a.  
 
 
 #Question 5
@@ -50,7 +50,7 @@ Check all statements that are true regarding image histogram equalization:
 Check all that apply:
 
 [ ] Median filters are linear.  
-[X] Median filters are well-suited to deal with additive Gaussian noise.  
+[ ] Median filters are well-suited to deal with additive Gaussian noise.  
 [ ] The performance of median filters is independent of the number of noisy pixels.  
 [X] If you apply a median filter on a noisy image for a large number of times, the image will stop changing after some point.  
 
@@ -69,15 +69,47 @@ In this problem you will perform median filtering to enhance the quality of a no
 ##Personal notes
 
 ```matlab
-img = double(imread('W05Q07IMG01.jpg'))
-imshow(img/255)
+% GNU Octave
+img = im2double(imread('W05Q07IMG01.jpg'))
+%imshow(img)
 
 imgfil1 = medfilt2(img)
-imgshow(imgfil1/255)
+%imgshow(imgfil1)
 
 imgfil2 = medfilt2(imgfil1)
-imgshow(imgfil2/255)
+%imgshow(imgfil2)
+
+original = im2double(imread('W05Q07IMG02.jpg'))
+%imshow(original)
+
+[h,w] = size(original)
+mse = sum(sum(power(imgfil2-original,2)))/(h*w)
+psnr = 10*log10(1/mse)
+
+%psnr = 5.5845
+%psnr = 29.65
+```
+
+```matlab
+% GNU Octave
+img = double(imread('W05Q07IMG01.jpg'))
+imshow(img/256)
+
+imgfil1 = medfilt2(img)
+imshow(imgfil1/256)
+
+imgfil2 = medfilt2(imgfil1)
+imshow(imgfil2/256)
 
 original = double(imread('W05Q07IMG02.jpg'))
-imshow(original/255)
+imshow(original/256)
 
+[h,w] = size(original)
+mse = sum(sum(power(imgfil2-original,2)))/(h*w)
+psnr = 10*log10(256/mse)
+
+%psnr = 5.5845
+%psnr = 29.65
+%psnr = 5.60
+%WTF?
+```
