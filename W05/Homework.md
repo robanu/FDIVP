@@ -65,3 +65,19 @@ In this problem you will perform median filtering to enhance the quality of a no
 3. Perform a second-pass median filtering on the filtered image that you have obtained from step (2). Visualize the two-pass filtered image. Compare it with the noisy input image and the 1-pass filtered image.
 
 4. Download the noise-free image from [here](W05Q07IMG02.jpg). Compute the PSNR values between (a) the noise-free image and the noisy input image, (b) the noise-free image and the 1-pass filtering output, and (c) the noise-free image and the 2-pass filtering output. Enter the three PSNR values in the box below. Enter the numbers to two decimal points.
+
+##Personal notes
+
+```matlab
+img = double(imread('W05Q07IMG01.jpg'))
+imshow(img/255)
+
+imgfil1 = medfilt2(img)
+imgshow(imgfil1/255)
+
+imgfil2 = medfilt2(imgfil1)
+imgshow(imgfil2/255)
+
+original = double(imread('W05Q07IMG02.jpg'))
+imshow(original/255)
+
