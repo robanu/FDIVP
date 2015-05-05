@@ -6,7 +6,7 @@ Attempts: 100
 #Question 1
 The main difference between image enhancement and image restoration is the fact that the degradation model must be known in latter.
 
-[ ] True  
+[X] True  
 [ ] False
 
 
@@ -15,7 +15,7 @@ If you wanted to make an image look brighter than what it currently does, which 
 
 [ ] ![](W04Q02IMG01.png)  
 [ ] ![](W04Q02IMG02.png)  
-[ ] ![](W04Q02IMG03.png)  
+[X] ![](W04Q02IMG03.png)  
 [ ] ![](W04Q02IMG04.png)  
 
 
@@ -25,7 +25,7 @@ The mean and standard deviation of pixel intensity values in an 8-bit gray-scale
 [ ] 135, 10  
 [ ] 120, 10  
 [ ] 110, 20  
-[ ] They can't be determined without knowing the size of the image.  
+[X] They can't be determined without knowing the size of the image.  
 
 
 #Question 4
@@ -40,10 +40,10 @@ Check all statements that apply to the following intensity transformation:
 #Question 5
 Check all statements that are true regarding image histogram equalization:
 
-[ ] After histogram equalization, the intensity values are more effectively distributed over the histogram range.  
+[X] After histogram equalization, the intensity values are more effectively distributed over the histogram range.  
 [ ] The mean intensity value of the pixels in an image increases after histogram equalization.  
 [ ] After histogram equalization images will always look brighter.  
-[ ] If pixel p is the brightest pixel in image x, it will remain the brightest pixel after histogram equalization.  
+[X] If pixel p is the brightest pixel in image x, it will remain the brightest pixel after histogram equalization.  
 
 
 #Question 6
