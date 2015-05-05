@@ -13,10 +13,10 @@ The main difference between image enhancement and image restoration is the fact 
 #Question 2
 If you wanted to make an image look brighter than what it currently does, which one of the following intensity transformations would you use?
 
-[ ] ![](W04Q02IMG01.png)  
-[ ] ![](W04Q02IMG02.png)  
-[X] ![](W04Q02IMG03.png)  
-[ ] ![](W04Q02IMG04.png)  
+[ ] ![](W05Q02IMG01.png)  
+[ ] ![](W05Q02IMG02.png)  
+[X] ![](W05Q02IMG03.png)  
+[ ] ![](W05Q02IMG04.png)  
 
 
 #Question 3
@@ -29,7 +29,8 @@ The mean and standard deviation of pixel intensity values in an 8-bit gray-scale
 
 
 #Question 4
-Check all statements that apply to the following intensity transformation:
+Check all statements that apply to the following intensity transformation:  
+![](W05Q04IMG00.png)  
 
 [X] The output image is binary since its pixels take on only two intensity levels.  
 [ ] It is possible to recover the input image after it undergoes this transformation.  
@@ -66,36 +67,6 @@ In this problem you will perform median filtering to enhance the quality of a no
 
 4. Download the noise-free image from [here](W05Q07IMG02.jpg). Compute the PSNR values between (a) the noise-free image and the noisy input image, (b) the noise-free image and the 1-pass filtering output, and (c) the noise-free image and the 2-pass filtering output. Enter the three PSNR values in the box below. Enter the numbers to two decimal points.
 
-##Personal notes
-
-```matlab
-% GNU Octave
-img = im2double(imread('W05Q07IMG01.jpg'))
-%imshow(img)
-
-imgfil1 = medfilt2(img)
-%imgshow(imgfil1)
-
-imgfil2 = medfilt2(imgfil1)
-%imgshow(imgfil2)
-
-original = im2double(imread('W05Q07IMG02.jpg'))
-%imshow(original)
-
-[h,w] = size(original)
-%a
-mse = sum(sum(power(img-original,2)))/(h*w)
-a = 10*log10(1/mse)
-
-%b
-mse = sum(sum(power(imgfil1-original,2)))/(h*w)
-b = 10*log10(1/mse)
-
-%c
-mse = sum(sum(power(imgfil2-original,2)))/(h*w)
-c = 10*log10(1/mse)
-
-%octave = 11.332 27.377 29.650
-%matlab = 11.332 27.376 29.649
-```
+[X] octave = 11.332 27.377 29.650
+[ ] matlab = 11.332 27.376 29.649
 
