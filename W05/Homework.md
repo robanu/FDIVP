@@ -33,8 +33,8 @@ Check all statements that apply to the following intensity transformation:
 
 [ ] The output image is binary since its pixels take on only two intensity levels.  
 [ ] It is possible to recover the input image after it undergoes this transformation.  
-[ ] The mean intensity value of the pixels in the transformed image is always between a and b (including the end points a and b).  
-[ ] In the transformed image, the number of pixels with intensity level b is less than the number of pixels with intensity level a.  
+[X] The mean intensity value of the pixels in the transformed image is always between a and b (including the end points a and b).  
+[X] In the transformed image, the number of pixels with intensity level b is less than the number of pixels with intensity level a.  
 
 
 #Question 5
@@ -50,9 +50,9 @@ Check all statements that are true regarding image histogram equalization:
 Check all that apply:
 
 [ ] Median filters are linear.  
-[ ] Median filters are well-suited to deal with additive Gaussian noise.  
+[X] Median filters are well-suited to deal with additive Gaussian noise.  
 [ ] The performance of median filters is independent of the number of noisy pixels.  
-[ ] If you apply a median filter on a noisy image for a large number of times, the image will stop changing after some point.  
+[X] If you apply a median filter on a noisy image for a large number of times, the image will stop changing after some point.  
 
 
 #Question 7
