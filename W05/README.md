@@ -83,33 +83,19 @@ original = im2double(imread('W05Q07IMG02.jpg'))
 %imshow(original)
 
 [h,w] = size(original)
-mse = sum(sum(power(imgfil2-original,2)))/(h*w)
-psnr = 10*log10(1/mse)
+%a
+mse = sum(sum(power(img-original,2)))/(h*w)
+a = 10*log10(1/mse)
 
-%psnr = 5.5845
-%psnr = 29.65
+%b
+mse = sum(sum(power(imgfil1-original,2)))/(h*w)
+b = 10*log10(1/mse)
+
+%c
+mse = sum(sum(power(imgfil2-original,2)))/(h*w)
+c = 10*log10(1/mse)
+
+%octave = 11.332 27.377 29.650
+%matlab = 11.332 27.376 29.649
 ```
 
-```matlab
-% GNU Octave
-img = double(imread('W05Q07IMG01.jpg'))
-imshow(img/256)
-
-imgfil1 = medfilt2(img)
-imshow(imgfil1/256)
-
-imgfil2 = medfilt2(imgfil1)
-imshow(imgfil2/256)
-
-original = double(imread('W05Q07IMG02.jpg'))
-imshow(original/256)
-
-[h,w] = size(original)
-mse = sum(sum(power(imgfil2-original,2)))/(h*w)
-psnr = 10*log10(256/mse)
-
-%psnr = 5.5845
-%psnr = 29.65
-%psnr = 5.60
-%WTF?
-```
