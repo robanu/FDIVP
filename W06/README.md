@@ -20,7 +20,7 @@ Without regularization, we can still solve an image restoration problem and obta
 #Question 3
 In the spatial domain, the out-of-focus effect can be modeled with an LSI system with impulse response ![](W06Q03IMG00.png). What is the effect of the system on the image in the frequency domain? Hint: recall that the low-frequency components in an image correspond to the smooth intensity variations, while the high-frequency components correspond to rapid intensity variations, i.e., edges.
 
-**[!]** Mainly low frequency components get suppressed.  
+**[-]** Mainly low frequency components get suppressed.  
 **[X]** Mainly high frequency components get suppressed.  
 **[-]** None of the above.  
 **[-]** All frequency components get suppressed.  
@@ -43,4 +43,14 @@ The spatially adaptive constrained least-squares restoration filter can potentia
 
 
 #Question 6
-This problems pertains to inverse filtering. You should review the corresponding slides in the video lectures to refresh your memory before attempting this problem. To help you understand how inverse filter is implemented and applied, we have provided you with a MATLAB script [here](inverse_filtering.m). Download the script and the [original image](W06Q06IMG00.jpg), and open the script using MATLAB. Once you open the script, you will see on Line 8 the statement "T = 1e-1". This defines the threshold value used in the inverse filter. The script simulates the blur due to motion and applies inverse filtering for its removal. We encourage you to try different values of the threshold and see how it affects the performance of the inverse filter. We ask you to enter the ISNR value below when the threshold is set to 0.5. Make sure you enter the number with at least 2 decimal points.
+This problems pertains to inverse filtering. You should review the corresponding slides in the video lectures to refresh your memory before attempting this problem.
+
+To help you understand how inverse filter is implemented and applied, we have provided you with a MATLAB script [here](inverse_filtering.m).
+
+Download the script and the [original image](W06Q06IMG00.jpg), and open the script using MATLAB.
+
+Once you open the script, you will see on Line 8 the statement "T = 1e-1". This defines the threshold value used in the inverse filter. The script simulates the blur due to motion and applies inverse filtering for its removal. We encourage you to try different values of the threshold and see how it affects the performance of the inverse filter.
+
+We ask you to enter the ISNR value below when the threshold is set to 0.5. Make sure you enter the number with at least 2 decimal points.
+
+**[X]** 2.86
