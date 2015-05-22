@@ -5,10 +5,11 @@ close all
 clc
 
 % specify the threshold T
-T = 1e-1;
+%T = 1e-1;
+T = 0.5;
 
 %% read in the original, sharp and noise-free image
-original = im2double(rgb2gray((imread('original_cameraman.jpg'))));
+original = im2double(rgb2gray((imread('W06Q06IMG00.jpg'))));
 [H, W] = size(original);
 
 %% generate the blurred and noise-corrupted image for experiment
@@ -49,3 +50,10 @@ figure; imshow(noisy, 'border', 'tight');
 figure; imshow(restored, 'border', 'tight');
 figure; plot(abs(fftshift(motion_freq(1, :)))); title('spectrum of motion blur'); xlim([0 1024]);
 figure; plot(abs(fftshift(inverse_freq(1, :)))); title('spectrum of inverse filter'); xlim([0 1024]);
+
+% Octave style
+%10*log10( sum(sum(power((original - noisy),2))) / sum(sum( power((original - restored),2))) )
+
+10 * log10 ( sum( abs(original(:) - noisy(:)).^2 ) / sum( abs(original(:) - restored(:)).^2 ) )
+
+%result: 2.8663
